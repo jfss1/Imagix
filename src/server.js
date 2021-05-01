@@ -10,7 +10,7 @@ const io = require('socket.io')(http);
 
     console.log("New Client is Connected!");
 });*/
-const gameRooms = ["Room1", "Room2", "Room3"];
+const gameRooms = ["PC", "Player"];
 
 io.of("/games").on("connection", (socket)=>{
     console.log("New client")
