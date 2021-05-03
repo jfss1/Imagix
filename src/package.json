@@ -2,21 +2,24 @@
   "name": "Trabalho2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
     "express": "^4.17.1",
+    "moment": "^2.29.1",
     "socket.io": "^4.0.1",
     "socket.io-client": "^4.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server",
+    "dev": "nodemon server"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jfss1/Set-the-image-name.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
