@@ -1,0 +1,34 @@
+[
+    {
+        "solution" : "balde",
+        "path" : "./img/balde"
+    },
+    {
+        "solution" : "jarra",
+        "path" : "./img/jarra"
+    },
+    {
+        "solution" : "camisa",
+        "path" : "./img/camisa"
+    },
+    {
+        "solution" : "faca",
+        "path" : "./img/faca"
+    },
+    {
+        "solution" : "martelo",
+        "path" : "./img/martelo"
+    },
+    {
+        "solution" : "garrafa",
+        "path" : "./img/garrafa"
+    },
+    {
+        "solution" : "chicote",
+        "path" : "./img/chicote"
+    },
+    {
+        "solution" : "frigorífico",
+        "path" : "./img/frigorifico"
+    }
+]
