@@ -7,6 +7,7 @@ const io = require('socket.io')(http);
 const botName = 'Robo';
 const formatMessage = require('./utils/message');
 const {userJoin, getCurrentUser, getRoomUsers, userLeave} = require('./utils/users');
+const imagemjson = require('./public/json/imagem.json');
 
 //Define pasta onde esta o index da pagina
 app.use(express.static(path.join(__dirname, 'public')));
@@ -61,6 +62,9 @@ io.on('connection', socket =>{
         }
     });
 });
+
+//teste para aparecer a primeira imagem no console
+console.log(imagemjson[0].solution);
 
 http.listen(port, () =>{
     console.log("Server is listning on localhost:" + port);
