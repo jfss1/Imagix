@@ -1,42 +1,42 @@
 [
     {
         "solution" : "balde",
-        "path" : "./img/balde",
+        "path" : "/img/balde",
         "id" : 1
     },
     {
         "solution" : "jarra",
-        "path" : "./img/jarra",
+        "path" : "/img/jarra",
         "id" : 2
     },
     {
         "solution" : "camisa",
-        "path" : "./img/camisa",
+        "path" : "/img/camisa",
         "id" : 3
     },
     {
         "solution" : "faca",
-        "path" : "./img/faca",
+        "path" : "/img/faca",
         "id" : 4
     },
     {
         "solution" : "martelo",
-        "path" : "./img/martelo",
+        "path" : "/img/martelo",
         "id" : 5
     },
     {
         "solution" : "garrafa",
-        "path" : "./img/garrafa",
+        "path" : "/img/garrafa",
         "id" : 6
     },
     {
         "solution" : "chicote",
-        "path" : "./img/chicote",
+        "path" : "/img/chicote",
         "id" : 7
     },
     {
         "solution" : "frigorífico",
-        "path" : "./img/frigorifico",
+        "path" : "/img/frigorifico",
         "id" : 8
     }
 ]

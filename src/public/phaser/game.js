@@ -14,10 +14,10 @@ var config = {
         }
     },
     scene:[
-       cenaMundo,
-       cenaLoad
+        cenaLoad,
+        cenaMundo
+       
     ]
 };
-
 
 var game = new Phaser.Game(config);
