@@ -1,5 +1,5 @@
 <?php
-    //informaçao para obter a informaçao de json
+    //obtem a informaçao do json
     $file = 'json/imagem.json';
     $json = file_get_contents($file,0,null,null); 
     $objs = json_decode($json,true);
