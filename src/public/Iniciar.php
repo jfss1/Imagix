@@ -6,7 +6,7 @@
     
     foreach ($objs as $value) {
 
-        //mostra a informaçao em array e conversao para as imagens
+        //mostra a informaçao em array e conversao base64_encode para as imagens
         echo $value['solution'];
         echo '<img src="data:img/png;base64,'.base64_encode($value['path']); echo '" >';
 
