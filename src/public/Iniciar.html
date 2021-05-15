@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JSON Test</title>
+    <link rel="shortcut icon" href="#">
 </head>
 <body>
     <div id="myData"></div>
@@ -24,10 +25,13 @@
             for (var i = 0; i < data.length; i++) {
                 var div = document.createElement("div");
                 div.innerHTML = data[i].solution;
-                mainContainer.appendChild(div);
+                document.body.appendChild(div);
                 var img = document.createElement("IMG");
-                    img.src = data[i].path;
-                    cell.appendChild(img);
+                img.setAttribute("src", data[i].path);
+                img.setAttribute("width", "304");
+                img.setAttribute("height", "228");
+                img.setAttribute("alt", "The Pulpit Rock");
+                document.body.appendChild(img);
             }
         }
       </script>
