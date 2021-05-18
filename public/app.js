@@ -66,6 +66,7 @@ jQuery(function($){
          */
         onNewGameCreated : function(data) {
             App.Host.gameInit(data);
+            console.log(data.gameId);
         },
 
         /**

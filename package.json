@@ -6,7 +6,7 @@
   "dependencies": {
     "express": "^3.21.2",
     "socket.io": "^0.9.19",
-    "sqlite3": "^3.1.4"
+    "sqlite3": "https://github.com/mapbox/node-sqlite3/tarball/master"
   },
   "main": "index.js",
   "devDependencies": {},
