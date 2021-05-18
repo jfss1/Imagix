@@ -27,7 +27,7 @@ var sqlite3 = require("sqlite3").verbose();
 var db = new sqlite3.Database(file);
 
 db.serialize(function() {
-  if(exists) {
+  if(!exists) {
     db.run("CREATE TABLE player (player_name TEXT, player_win INT)");
   }
 });
