@@ -201,8 +201,8 @@ jQuery(function($){
             App.$doc.on('click', '#btnStart',App.Player.onPlayerStartClick);
             App.$doc.on('click', '.btnAnswer',App.Player.onPlayerAnswerClick);
             App.$doc.on('click', '#btnPlayerRestart', App.Player.onPlayerRestart);
+            App.$doc.on('click', '#btnComeBack', App.onBackClick);
             //App.$doc.on('click', '#leaderboard', App.onLeaderboardClick);
-            App.$doc.on('click', '#back', App.onBackClick);
         },
 
         /* *************************************
@@ -225,8 +225,8 @@ jQuery(function($){
 
         onBackClick : function()
         {
-          App.$gameArea.html(App.$templateIntroScreen);
-          App.doTextFit('.title');
+            App.$gameArea.html(App.$templateIntroScreen);
+            App.doTextFit('.title');
         },
         /* *******************************
            *         HOST CODE           *
