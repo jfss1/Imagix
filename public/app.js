@@ -31,7 +31,7 @@ jQuery(function($){
             IO.socket.on('hostCheckAnswer', IO.hostCheckAnswer);
             IO.socket.on('gameOver', IO.gameOver);
             IO.socket.on('error', IO.error );
-            IO.socket.on('showLeader',IO.showLeader);
+            //IO.socket.on('showLeader',IO.showLeader);
         },
 
         /**
@@ -44,7 +44,7 @@ jQuery(function($){
         },
 
         //function for showing leader
-        showLeader : function(data){
+        /* showLeader : function(data){
           App.$gameArea.html(App.$leaderGame);
             var table='<div id="tablearea"><table id="leadertable"><tr><th>Player Name</th><th>Total Win</th></tr>';
             console.log("Showing Leader");
@@ -58,7 +58,7 @@ jQuery(function($){
             table+="<div id='mid'><button id='back' class='btn'>BACK</button></div>"
             console.log(table);
             App.$gameArea.append(table);
-        },
+        }, */
 
         /**
          * A new game has been created and a random game ID has been generated.
@@ -185,7 +185,7 @@ jQuery(function($){
             App.$templateNewGame = $('#create-game-template').html();
             App.$templateJoinGame = $('#join-game-template').html();
             App.$hostGame = $('#host-game-template').html();
-            App.$leaderGame = $('#leaderboard-template').html();
+            //App.$leaderGame = $('#leaderboard-template').html();
         },
 
         /**
@@ -200,7 +200,7 @@ jQuery(function($){
             App.$doc.on('click', '#btnStart',App.Player.onPlayerStartClick);
             App.$doc.on('click', '.btnAnswer',App.Player.onPlayerAnswerClick);
             App.$doc.on('click', '#btnPlayerRestart', App.Player.onPlayerRestart);
-            App.$doc.on('click', '#leaderboard', App.onLeaderboardClick);
+            //App.$doc.on('click', '#leaderboard', App.onLeaderboardClick);
             App.$doc.on('click', '#back', App.onBackClick);
         },
 
@@ -378,8 +378,8 @@ jQuery(function($){
 
                     // Advance player's score if it is correct
                     if( App.Host.currentCorrectAnswer === data.answer ) {
-                        // Add 5 to the player's score
-                        $pScore.text( +$pScore.text() + 5 );
+                        // Add 1 to the player's score
+                        $pScore.text( +$pScore.text() + 1 );
 
                         // Advance the round
                         App.currentRound += 1;
@@ -393,10 +393,10 @@ jQuery(function($){
                         // Notify the server to start the next round.
                         IO.socket.emit('hostNextRound',data);
 
-                    } else {
+                    }/*  else {
                         // A wrong answer was submitted, so decrement the player's score.
                         $pScore.text( +$pScore.text() - 3 );
-                    }
+                    } */
                 }
             },
 
@@ -561,6 +561,7 @@ jQuery(function($){
              * Show the list of words for the current round.
              * @param data{{round: *, word: *, answer: *, list: Array}}
              */
+            //MUDAR PARA UM INPUT
             newWord : function(data) {
                 // Create an unordered list element
                 var $list = $('<ul/>').attr('id','ulAnswers');
