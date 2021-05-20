@@ -565,21 +565,26 @@ jQuery(function($){
             //MUDAR PARA UM INPUT
             newWord : function(data) {
                 // Create an unordered list element
-                var $list = $('<ul/>').attr('id','ulAnswers');
+                var $list = $('<ul/>').attr('id','messages');
 
                 // Insert a list item for each word in the word list
                 // received from the server.
-                $.each(data.list, function(){
+
+                $($list).append( $('<input id="input" autocomplete="off"></input>')
+                        .html(this));  
+
+                /*$.each(data, function(){
                     $list                                //  <ul> </ul>
-                        .append( $('<li/>')              //  <ul> <li> </li> </ul>
-                            .append( $('<button/>')      //  <ul> <li> <button> </button> </li> </ul>
-                                .addClass('btnAnswer')   //  <ul> <li> <button class='btnAnswer'> </button> </li> </ul>
-                                .addClass('btn')         //  <ul> <li> <button class='btnAnswer'> </button> </li> </ul>
-                                .val(this)               //  <ul> <li> <button class='btnAnswer' value='word'> </button> </li> </ul>
+                         //.append( $('<ul/>')              //  <ul> <li> </li> </ul>  
+                         .append( $('<input/>')      //  <ul> <li> <button> </button> </li> </ul>
+                                .addClass('input')   //  <ul> <li> <button class='btnAnswer'> </button> </li> </ul>
+                                //.addClass('btn')         //  <ul> <li> <button class='btnAnswer'> </button> </li> </ul>
+                               // .val(this)               //  <ul> <li> <button class='btnAnswer' value='word'> </button> </li> </ul>
                                 .html(this)              //  <ul> <li> <button class='btnAnswer' value='word'>word</button> </li> </ul>
                             )
-                        )
-                });
+                       // )
+                });*/
+
 
                 // Insert the list onto the screen.
                 $('#gameArea').html($list);
