@@ -1,20 +1,18 @@
 var io;
 var gameSocket;
-var db;
 /**
  * This function is called by index.js to initialize a new game instance.
  *
  * @param sio The Socket.IO library
  * @param socket The socket object for the connected client.
  */
-exports.initGame = function(sio, socket,sdb){
+exports.initGame = function(sio, socket){
     io = sio;
     gameSocket = socket;
-    db=sdb;
     gameSocket.emit('connected', { message: "You are connected!" });
 
     //common event
-    gameSocket.on('findLeader',findLeader);
+    //gameSocket.on('findLeader',findLeader);
 
     // Host Events
     gameSocket.on('hostCreateNewGame', hostCreateNewGame);
@@ -81,7 +79,7 @@ function hostNextRound(data) {
         sendWord(data.round, data.gameId);
     } else {
 
-      if(!data.done)
+     /*  if(!data.done)
       {
         //updating players win count
         db.all("SELECT * FROM player WHERE player_name=?",data.winner, function(err, rows) {
@@ -94,14 +92,14 @@ function hostNextRound(data) {
         })
         });
         data.done++;
-      }
+      } */
         // If the current round exceeds the number of words, send the 'gameOver' event.
       io.sockets.in(data.gameId).emit('gameOver',data);
     }
 }
 
 // function for finding leader
-function findLeader()
+/* function findLeader()
 {
   console.log("finding leader");
     var sock=this;
@@ -123,9 +121,9 @@ function findLeader()
       }
       console.log("found leader");
       sock.emit('showLeader',leader);
-    });
+    }); 
 
-}
+}*/
 /* *****************************
    *                           *
    *     PLAYER FUNCTIONS      *
@@ -154,7 +152,7 @@ function playerJoinGame(data) {
 
         // Join the room
         sock.join(data.gameId);
-        db.serialize(function()
+        /* db.serialize(function()
             {
                 var stmt = " SELECT * FROM player WHERE player_name='"+data.playerName+"';";
                 db.get(stmt, function(err, row){
@@ -165,7 +163,7 @@ function playerJoinGame(data) {
                         console.log("row is: ", row);
                     }
                 });
-            });
+            }); */
         //console.log('Player ' + data.playerName + ' joining game: ' + data.gameId );
 
         // Emit an event notifying the clients that the player has joined the room.

@@ -200,7 +200,7 @@ jQuery(function($){
             App.$doc.on('click', '#btnJoinGame', App.Player.onJoinClick);
             App.$doc.on('click', '#btnStart',App.Player.onPlayerStartClick);
             App.$doc.on('click', '.btnAnswer',App.Player.onPlayerAnswerClick);
-            App.$doc.on('click', '#btnPlayerRestart', App.Player.onPlayerRestart);
+            //App.$doc.on('click', '#btnPlayerRestart', App.Player.onPlayerRestart);
             App.$doc.on('click', '#btnComeBack', App.onBackClick);
             //App.$doc.on('click', '#leaderboard', App.onLeaderboardClick);
         },
@@ -446,10 +446,10 @@ jQuery(function($){
             /**
              * A player hit the 'Start Again' button after the end of a game.
              */
-            restartGame : function() {
+           /*  restartGame : function() {
                 App.$gameArea.html(App.$templateNewGame);
                 $('#spanNewGameCode').text(App.gameId);
-            }
+            } */
         },
 
 
@@ -523,7 +523,7 @@ jQuery(function($){
              *  Click handler for the "Start Again" button that appears
              *  when a game is over.
              */
-            onPlayerRestart : function() {
+            /* onPlayerRestart : function() {
                 var data = {
                     gameId : App.gameId,
                     playerName : App.Player.myName
@@ -531,7 +531,7 @@ jQuery(function($){
                 IO.socket.emit('playerRestart',data);
                 App.currentRound = 0;
                 $('#gameArea').html("<h3>Waiting on host to start new game.</h3>");
-            },
+            }, */
 
             /**
              * Display the waiting screen for player 1
@@ -591,13 +591,13 @@ jQuery(function($){
             endGame : function() {
                 $('#gameArea')
                     .html('<div class="gameOver">Game Over!</div>')
-                    .append(
+                    /* .append(
                         // Create a button to start a new game.
                         $('<button>Start Again</button>')
-                            .attr('id','btnPlayerRestart')
+                            .attr('id','btnComeBack')
                             .addClass('btn')
                             .addClass('btnGameOver')
-                    );
+                    ) */;
             }
         },
 
