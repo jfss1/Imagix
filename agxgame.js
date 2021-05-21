@@ -221,15 +221,15 @@ function sendWord(wordPoolIndex, gameId) {
  * and organizing the data to be sent back to the clients.
  *
  * @param i The index of the wordPool.
- * @returns {{round: *, word: *, answer: *, list: Array}}
+ * @returns {{round: *, image: *, answer: *, list: Array}}
  */
 function getWordData(i){
     // Randomize the order of the available words.
     // The first element in the randomized array will be displayed on the host screen.
     // The second element will be hidden in a list of decoys as the correct answer
-    var words = wordPool[i].words;
+    var images = wordPool[i].images;
     
-    var decoys = shuffle(wordPool[i].decoys);
+    var words = shuffle(wordPool[i].words);
 
     // Randomize the order of the decoy words and choose the first 5
     //var decoys = shuffle(wordPool[i].decoys).slice(0,5);
@@ -241,9 +241,9 @@ function getWordData(i){
     // Package the words into a single object.
     var wordData = {
         round: i,
-        word : words[0],   // Displayed Word
-        answer : decoys[0], // Correct Answer
-        list : decoys      // Word list for player (decoys and answer)
+        image : images[0],   // Displayed Word
+        answer : words[0], // Correct Answer
+        list : words      // Word list for player (decoys and answer)
     };
 
     return wordData;
@@ -285,35 +285,35 @@ function shuffle(array) {
  */
 var wordPool = [
     {
-        "words"  : [ "./img/balde.png" ],
-        "decoys" : [ "balde" ]
+        "images"  : [ "./img/balde.png" ],
+        "words" : [ "balde" ]
     },
     {
-        "words"  : [ "./img/jarra.png" ],
-        "decoys" : ["jarra"]
+        "images"  : [ "./img/jarra.png" ],
+        "words" : ["jarra"]
     },
     {
-        "words" : ["./img/camisa.png"] ,
-        "decoys" : [ "camisa"]
+        "images" : ["./img/camisa.png"] ,
+        "words" : [ "camisa"]
     },
     {
-        "words" : ["./img/faca.png"] ,
-        "decoys" : [ "faca"]
+        "images" : ["./img/faca.png"] ,
+        "words" : [ "faca"]
     },
     {
-        "words" : ["./img/martelo.png"] ,
-        "decoys" : [ "martelo"]
+        "images" : ["./img/martelo.png"] ,
+        "words" : [ "martelo"]
     },
     {
-        "words" : ["./img/garrafa.png"] ,
-        "decoys" : [ "garrafa"]
+        "images" : ["./img/garrafa.png"] ,
+        "words" : [ "garrafa"]
     },
     {
-        "words" : ["./img/chicote.png"] ,
-        "decoys" : [ "chicote"]
+        "iamges" : ["./img/chicote.png"] ,
+        "words" : [ "chicote"]
     },
     {
-        "words" : ["./img/frigorifico.png"] ,
-        "decoys" : [ "frigorífico"]
+        "images" : ["./img/frigorifico.png"] ,
+        "words" : [ "frigorífico"]
     }
 ]
