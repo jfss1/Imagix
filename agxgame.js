@@ -227,20 +227,22 @@ function getWordData(i){
     // Randomize the order of the available words.
     // The first element in the randomized array will be displayed on the host screen.
     // The second element will be hidden in a list of decoys as the correct answer
-    var words = shuffle(wordPool[i].words);
+    var words = wordPool[i].words;
+    
+    var decoys = shuffle(wordPool[i].decoys);
 
     // Randomize the order of the decoy words and choose the first 5
-    var decoys = shuffle(wordPool[i].decoys).slice(0,5);
+    //var decoys = shuffle(wordPool[i].decoys).slice(0,5);
 
     // Pick a random spot in the decoy list to put the correct answer
     var rnd = Math.floor(Math.random() * 5);
-    decoys.splice(rnd, 0, words[1]);
+    //decoys.splice(words[1]);
 
     // Package the words into a single object.
     var wordData = {
         round: i,
         word : words[0],   // Displayed Word
-        answer : words[1], // Correct Answer
+        answer : decoys[0], // Correct Answer
         list : decoys      // Word list for player (decoys and answer)
     };
 
@@ -283,52 +285,35 @@ function shuffle(array) {
  */
 var wordPool = [
     {
-        "words"  : [ "sale","seal","ales","leas" ],
-        "decoys" : [ "lead","lamp","seed","eels","lean","cels","lyse","sloe","tels","self" ]
+        "words"  : [ "./img/balde.png" ],
+        "decoys" : [ "balde" ]
     },
-
     {
-        "words"  : [ "item","time","mite","emit" ],
-        "decoys" : [ "neat","team","omit","tame","mate","idem","mile","lime","tire","exit" ]
+        "words"  : [ "./img/jarra.png" ],
+        "decoys" : ["jarra"]
     },
-
     {
-        "words"  : [ "spat","past","pats","taps" ],
-        "decoys" : [ "pots","laps","step","lets","pint","atop","tapa","rapt","swap","yaps" ]
+        "words" : ["./img/camisa.png"] ,
+        "decoys" : [ "camisa"]
     },
-
     {
-        "words"  : [ "nest","sent","nets","tens" ],
-        "decoys" : [ "tend","went","lent","teen","neat","ante","tone","newt","vent","elan" ]
+        "words" : ["./img/faca.png"] ,
+        "decoys" : [ "faca"]
     },
-
     {
-        "words"  : [ "pale","leap","plea","peal" ],
-        "decoys" : [ "sale","pail","play","lips","slip","pile","pleb","pled","help","lope" ]
+        "words" : ["./img/martelo.png"] ,
+        "decoys" : [ "martelo"]
     },
-
     {
-        "words"  : [ "races","cares","scare","acres" ],
-        "decoys" : [ "crass","scary","seeds","score","screw","cager","clear","recap","trace","cadre" ]
+        "words" : ["./img/garrafa.png"] ,
+        "decoys" : [ "garrafa"]
     },
-
     {
-        "words"  : [ "bowel","elbow","below","beowl" ],
-        "decoys" : [ "bowed","bower","robed","probe","roble","bowls","blows","brawl","bylaw","ebola" ]
+        "words" : ["./img/chicote.png"] ,
+        "decoys" : [ "chicote"]
     },
-
     {
-        "words"  : [ "dates","stead","sated","adset" ],
-        "decoys" : [ "seats","diety","seeds","today","sited","dotes","tides","duets","deist","diets" ]
-    },
-
-    {
-        "words"  : [ "spear","parse","reaps","pares" ],
-        "decoys" : [ "ramps","tarps","strep","spore","repos","peris","strap","perms","ropes","super" ]
-    },
-
-    {
-        "words"  : [ "stone","tones","steno","onset" ],
-        "decoys" : [ "snout","tongs","stent","tense","terns","santo","stony","toons","snort","stint" ]
+        "words" : ["./img/frigorifico.png"] ,
+        "decoys" : [ "frigorífico"]
     }
 ]
