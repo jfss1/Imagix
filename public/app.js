@@ -505,7 +505,8 @@ jQuery(function($){
              */
             onPlayerAnswerClick: function() {
                 // console.log('Clicked Answer Button');
-                var $btn = $(this);      // the tapped button
+                var $btn = $(document.getElementById("input").value);      // the tapped button
+                console.log($btn);
                 var answer = $btn.val(); // The tapped word
 
                 // Send the player info and tapped word to the server so
@@ -566,12 +567,26 @@ jQuery(function($){
             newWord : function(data) {
                 // Create an unordered list element
                 var $list = $('<ul/>').attr('id','messages');
+                $('#gameArea').html($list);
 
                 // Insert a list item for each word in the word list
                 // received from the server.
+                document.getElementById('messages').innerHTML = '<input id="input" autocomplete="off"></input>';
+                document.getElementById('messages').innerHTML += '<button class="btnAnswer">tentar</button>';
+                /* $input
+                    .append($('<li/>'))
+                    .append($('<input/>'))
+                        .addClass('value')
+                        .html('');
 
-                $($list).append( $('<input id="input" autocomplete="off"></input>')
-                        .html(this));  
+                $list.appendcl
+                        
+                $list
+                    .append($('<li/>'))
+                    .append($('<button/>'))
+                        .addClass('btnAnswer')
+                        .addClass('btn')
+                        .html('button'); */
 
                 /*$.each(data, function(){
                     $list                                //  <ul> </ul>
@@ -588,6 +603,7 @@ jQuery(function($){
 
                 // Insert the list onto the screen.
                 $('#gameArea').html($list);
+
             },
 
             /**
