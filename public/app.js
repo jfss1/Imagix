@@ -356,7 +356,7 @@ jQuery(function($){
              */
             newWord : function(data) {
                 // Insert the new word into the DOM
-                //$('#hostWord').text(data.word);
+                $('#hostWord').text('');
                 $('#hostWord').append('<img src= "' + data.word + '" width="304"; height= "228">');
                 App.doTextFit('#hostWord');
 
