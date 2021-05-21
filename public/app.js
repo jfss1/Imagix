@@ -350,13 +350,14 @@ jQuery(function($){
                 $('#player2Score').find('.score').attr('id',App.Host.players[1].mySocketId);
             },
 
-            /**
+           /**
              * Show the word for the current round on screen.
              * @param data{{round: *, word: *, answer: *, list: Array}}
              */
             newWord : function(data) {
                 // Insert the new word into the DOM
-                $('#hostWord').text(data.word);
+                //$('#hostWord').text(data.word);
+                $('#hostWord').append('<img src= "' + data.word + '" width="304"; height= "228">');
                 App.doTextFit('#hostWord');
 
                 // Update the data for the current round
