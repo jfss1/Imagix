@@ -506,9 +506,8 @@ jQuery(function($){
              */
             onPlayerAnswerClick: function() {
                 // console.log('Clicked Answer Button');
-                var $btn = $(document.getElementById("input").value);      // the tapped button
-                console.log($btn);
-                var answer = $btn.val(); // The tapped word
+                var $btn = $(document.getElementById("input"));      // the tapped button
+                var answer = $btn.val().toLowerCase(); // The tapped word
 
                 // Send the player info and tapped word to the server so
                 // the host can check the answer.
