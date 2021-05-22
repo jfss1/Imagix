@@ -310,7 +310,7 @@ var wordPool = [
         "words" : [ "garrafa"]
     },
     {
-        "iamges" : ["./img/chicote.png"] ,
+        "images" : ["./img/chicote.png"] ,
         "words" : [ "chicote"]
     },
     {
