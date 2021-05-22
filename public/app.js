@@ -512,6 +512,7 @@ jQuery(function($){
                 // Insert a list item for each word in the word list
                 // received from the server.
                 document.getElementById('messages').innerHTML = '<input id="input" autocomplete="off"></input>';
+                document.getElementById('messages').innerHTML += '<br>';
                 document.getElementById('messages').innerHTML += '<button class="btnAnswer">tentar</button>';
                 
                 // Insert the list onto the screen.

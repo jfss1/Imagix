@@ -189,9 +189,10 @@ html, body {
 }
 
 .btnAnswer {
-    width: 30%;
+    width: 104%;
+    height: 100%;
     border-bottom: 1px dotted white;
-    font-weight: 300;
+    font-weight: 20px;
     font-size: 1em;
     color: #ffffff;
     background-color: #ff3364;
@@ -331,4 +332,16 @@ tr:nth-child(even) {
 tr:nth-child(odd) {
   background: #016064 ;
   color:white;
+}
+
+#messages{
+    padding-top: 40%;
+    padding-left: 30%;
+    padding-right: 30%;
+}
+
+#input{
+    width: 104%;
+    font-weight: 20px;
+    font-size: 1em;
 }
