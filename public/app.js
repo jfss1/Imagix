@@ -352,12 +352,12 @@ jQuery(function($){
 
            /**
              * Show the word for the current round on screen.
-             * @param data{{round: *, word: *, answer: *, list: Array}}
+             * @param data{{round: *, image: *, answer: *, list: Array}}
              */
             newWord : function(data) {
                 // Insert the new word into the DOM
                 $('#hostWord').text('');
-                $('#hostWord').append('<img src= "' + data.word + '" width="304"; height= "228">');
+                $('#hostWord').append('<img src= "' + data.image + '" width="304"; height= "228">');
                 App.doTextFit('#hostWord');
 
                 // Update the data for the current round
