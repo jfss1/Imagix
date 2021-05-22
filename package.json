@@ -1,6 +1,6 @@
 {
-  "name": "Imagix",
-  "description": "Advinhar o nome d",
+  "name": "imagix",
+  "description": "Advinhar o nome da imagem",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -22,4 +22,5 @@
   "license": "ISC",
   
   "homepage": "https://github.com/jfss1/imagix"
+
 }
