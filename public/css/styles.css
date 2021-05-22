@@ -8,7 +8,7 @@ Dark Purple : #A22FB0
 */
 
 html, body {
-    background-color: #78BD4C;
+    background-color: #016064;
     height: 100%;
     width: 100%;
     margin: 0;
@@ -23,16 +23,14 @@ html, body {
    ****************************** */
 
 .btn {
-    height: 100%;
+    height: 105%;
     width: 49%;
-    margin-bottom: 0;
-    color: #ECFFE0;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
+    color: #ffff;
+    font-family: 'Calibri';
     font-size: 2em;
     line-height: 1.2;
     text-align: center;
-    background-color: #8AD453;
+    background-color: #ff3364;
     vertical-align: middle;
     cursor: pointer;
     border: .1em solid transparent;
@@ -41,25 +39,6 @@ html, body {
     -ms-user-select: none;
     -o-user-select: none;
     user-select: none;
-}
-
-.btn:focus {
-    outline: thin dotted #333;
-    outline: 5px auto -webkit-focus-ring-color;
-    outline-offset: -2px;
-}
-
-.btn:hover,
-.btn:focus {
-    color: #AE37B2;
-    text-decoration: none;
-}
-
-.btn:active,
-.btn.active {
-    outline: 0;
-    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 
 .left {
@@ -81,7 +60,7 @@ html, body {
 }
 
 .titleWrapper {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Calibri';
     font-weight: 400;
     position: absolute;
     height: 50%;
@@ -97,8 +76,8 @@ html, body {
     margin: 0px auto;
     text-align: center;
     width: 100%;
-    font-family: 'Quicksand', sans-serif;
-    color: #ECFFE0;
+    font-family: 'Calibri';
+    color: #ffffff;
     font-weight: 300;
 }
 
@@ -113,20 +92,20 @@ html, body {
    ****************************** */
 
 .createGameWrapper, .joinGameWrapper, .gameOver {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Calibri';
     margin: 0 auto;
     text-align: center;
 }
 
 .createGameWrapper .info{
-    color: #ECFFE0;
+    color: #ffffff;
     font-weight: 400;
     font-size: 2em;
     margin-top: 1.5em;
 }
 
 .createGameWrapper{
-    color: #AE37B2;
+    color: #b1e9fd;
     font-weight: 300;
 }
 
@@ -139,8 +118,8 @@ html, body {
     padding: 1em;
     width: 25%;
     height: 25%;
-    font-family: 'Quicksand', sans-serif;
-    color: #A22FB0;
+    font-family: 'Calibri';
+    color: #ffffff;
     font-weight: 300;
     font-size: 1em;
     border: .1em dotted white;
@@ -167,13 +146,13 @@ html, body {
 
 .joinGameWrapper .info {
     font-size: 1.5em;
-    color: #ECFFE0;
+    color: #ffffff;
     height: 30%;
     padding-top: 1%;
 }
 
 .joinGameWrapper .btn {
-    width: 100%;
+    width: 50%;
     height: 50%;
 }
 
@@ -210,11 +189,12 @@ html, body {
 }
 
 .btnAnswer {
-    width: 100%;
+    width: 30%;
     border-bottom: 1px dotted white;
-    font-weight: 400;
-    font-size: 3em;
-    color: #AE37B2;
+    font-weight: 300;
+    font-size: 1em;
+    color: #ffffff;
+    background-color: #ff3364;
 }
 
 
@@ -279,12 +259,12 @@ html, body {
 
 .playerScore .score {
     text-align: center;
-    background-color: #A8FF56;
+    background-color: #013031;
 }
 
 .playerScore .playerName {
     width: 77%;
-    background-color: #ECFFE0;
+    background-color: #ffffff;
 }
 
 #player1Score {
@@ -349,6 +329,6 @@ tr:nth-child(even) {
   color:white;
 }
 tr:nth-child(odd) {
-  background: #336600 ;
+  background: #016064 ;
   color:white;
 }
