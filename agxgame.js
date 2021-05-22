@@ -74,7 +74,7 @@ function hostStartGame(gameId) {
  * @param data Sent from the client. Contains the current round and gameId (room)
  */
 function hostNextRound(data) {
-    if(data.round < wordPool.length ){
+    if(data.round < 7 ){
         // Send a new set of words back to the host and players.
         sendWord(data.round, data.gameId);
     } else {
@@ -227,15 +227,16 @@ function getWordData(i){
     // Randomize the order of the available words.
     // The first element in the randomized array will be displayed on the host screen.
     // The second element will be hidden in a list of decoys as the correct answer
-    var images = wordPool[i].images;
+    var rnd = Math.floor(Math.random() * wordPool.length);
+    var images = wordPool[rnd].images;
     
-    var words = shuffle(wordPool[i].words);
+    var words = shuffle(wordPool[rnd].words);
 
     // Randomize the order of the decoy words and choose the first 5
     //var decoys = shuffle(wordPool[i].decoys).slice(0,5);
 
     // Pick a random spot in the decoy list to put the correct answer
-    var rnd = Math.floor(Math.random() * 5);
+    
     //decoys.splice(words[1]);
 
     // Package the words into a single object.
@@ -315,5 +316,53 @@ var wordPool = [
     {
         "images" : ["./img/frigorifico.png"] ,
         "words" : [ "frigorífico"]
+    },
+    {
+        "images" : ["./img/telemovel.png"] ,
+        "words" : [ "telemóvel"]
+    },
+    {
+        "images" : ["./img/camera.png"] ,
+        "words" : [ "câmera"]
+    },
+    {
+        "images" : ["./img/macaco.png"] ,
+        "words" : [ "macaco"]
+    },
+    {
+        "images" : ["./img/girafa.png"] ,
+        "words" : [ "girafa"]
+    },
+    {
+        "images" : ["./img/elefante.png"] ,
+        "words" : [ "elefante"]
+    },
+    {
+        "images" : ["./img/ananas.png"] ,
+        "words" : [ "ananás"]
+    },
+    {
+        "images" : ["./img/maca1.png"] ,
+        "words" : [ "maçã"]
+    },
+    {
+        "images" : ["./img/maca2.png"] ,
+        "words" : [ "maca"]
+    },
+    {
+        "images" : ["./img/cadeira1.png"] ,
+        "words" : [ "cadeira de rodas"]
+    },
+    {
+        "images" : ["./img/cadeira2.png"] ,
+        "words" : [ "cadeira"]
+    },
+    {
+        "images" : ["./img/microondas.png"] ,
+        "words" : [ "microondas"]
+    },
+    {
+        "images" : ["./img/televisao.png"] ,
+        "words" : [ "televisão"]
     }
 ]

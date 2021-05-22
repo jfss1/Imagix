@@ -430,11 +430,11 @@ jQuery(function($){
                 }
                 App.doTextFit('#hostWord');
                 data.winner=winner;
-                if(data.done>0)
+                /* if(data.done>0)
                 {
 
                 }
-                else data.done=0;
+                else data.done=0; */
                 //console.log(data);
                 //IO.socket.emit("clientEndGame",data);
                 // Reset game data
