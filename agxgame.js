@@ -11,9 +11,6 @@ exports.initGame = function(sio, socket){
     gameSocket = socket;
     gameSocket.emit('connected', { message: "You are connected!" });
 
-    //common event
-    //gameSocket.on('findLeader',findLeader);
-
     // Host Events
     gameSocket.on('hostCreateNewGame', hostCreateNewGame);
     gameSocket.on('hostRoomFull', hostPrepareGame);
@@ -78,52 +75,12 @@ function hostNextRound(data) {
         // Send a new set of words back to the host and players.
         sendWord(data.round, data.gameId);
     } else {
-
-     /*  if(!data.done)
-      {
-        //updating players win count
-        db.all("SELECT * FROM player WHERE player_name=?",data.winner, function(err, rows) {
-        rows.forEach(function (row) {
-            win=row.player_win;
-            win++;
-            console.log(win);
-            db.run("UPDATE player SET player_win = ? WHERE player_name = ?", win, data.winner);
-            console.log(row.player_name, row.player_win);
-        })
-        });
-        data.done++;
-      } */
         // If the current round exceeds the number of words, send the 'gameOver' event.
       io.sockets.in(data.gameId).emit('gameOver',data);
     }
 }
 
-// function for finding leader
-/* function findLeader()
-{
-  console.log("finding leader");
-    var sock=this;
-    var i=0;
-    leader={};
-    db.all("SELECT * FROM player ORDER BY player_win DESC LIMIT 10",function(err,rows)
-    {
-      if(rows!=undefined)
-      {
-        rows.forEach(function (row)
-        {
-          leader[i]={};
-          leader[i]['name']=row.player_name;
-          leader[i]['win']=row.player_win;
-          console.log(row.player_name);
-          console.log(row.player_win);
-          i++;
-        })
-      }
-      console.log("found leader");
-      sock.emit('showLeader',leader);
-    }); 
 
-}*/
 /* *****************************
    *                           *
    *     PLAYER FUNCTIONS      *
@@ -152,19 +109,6 @@ function playerJoinGame(data) {
 
         // Join the room
         sock.join(data.gameId);
-        /* db.serialize(function()
-            {
-                var stmt = " SELECT * FROM player WHERE player_name='"+data.playerName+"';";
-                db.get(stmt, function(err, row){
-                    if(err) throw err;
-                    if(typeof row == "undefined") {
-                            db.prepare("INSERT INTO player (player_name,player_win) VALUES(?,?)").run(data.playerName,0).finalize();
-                    } else {
-                        console.log("row is: ", row);
-                    }
-                });
-            }); */
-        //console.log('Player ' + data.playerName + ' joining game: ' + data.gameId );
 
         // Emit an event notifying the clients that the player has joined the room.
         io.sockets.in(data.gameId).emit('playerJoinedRoom', data);
@@ -180,7 +124,6 @@ function playerJoinGame(data) {
  * @param data gameId
  */
 function playerAnswer(data) {
-    // console.log('Player ID: ' + data.playerId + ' answered a question with: ' + data.answer);
 
     // The player's answer is attached to the data object.  \
     // Emit an event with the answer so it can be checked by the 'Host'
@@ -232,12 +175,6 @@ function getWordData(i){
     
     var words = shuffle(wordPool[rnd].words);
 
-    // Randomize the order of the decoy words and choose the first 5
-    //var decoys = shuffle(wordPool[i].decoys).slice(0,5);
-
-    // Pick a random spot in the decoy list to put the correct answer
-    
-    //decoys.splice(words[1]);
 
     // Package the words into a single object.
     var wordData = {

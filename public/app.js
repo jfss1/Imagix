@@ -31,7 +31,6 @@ jQuery(function($){
             IO.socket.on('hostCheckAnswer', IO.hostCheckAnswer);
             IO.socket.on('gameOver', IO.gameOver);
             IO.socket.on('error', IO.error );
-            //IO.socket.on('showLeader',IO.showLeader);
         },
 
         /**
@@ -42,23 +41,6 @@ jQuery(function($){
             App.mySocketId = IO.socket.socket.sessionid;
             // console.log(data.message);
         },
-
-        //function for showing leader
-        /* showLeader : function(data){
-          App.$gameArea.html(App.$leaderGame);
-            var table='<div id="tablearea"><table id="leadertable"><tr><th>Player Name</th><th>Total Win</th></tr>';
-            console.log("Showing Leader");
-            var i=Object.keys(data).length;
-            for(var j=0;j<i;j++)
-            {
-                //console.log(i);
-              table+='<tr><td>'+data[j].name+'</td><td>'+data[j].win+'</td></tr>';
-            }
-            table+='</table></div>';
-            table+="<div id='mid'><button id='back' class='btn'>BACK</button></div>"
-            console.log(table);
-            App.$gameArea.append(table);
-        }, */
 
         /**
          * A new game has been created and a random game ID has been generated.
@@ -186,7 +168,6 @@ jQuery(function($){
             App.$templateNewGame = $('#create-game-template').html();
             App.$templateJoinGame = $('#join-game-template').html();
             App.$hostGame = $('#host-game-template').html();
-            //App.$leaderGame = $('#leaderboard-template').html();
         },
 
         /**
@@ -200,9 +181,7 @@ jQuery(function($){
             App.$doc.on('click', '#btnJoinGame', App.Player.onJoinClick);
             App.$doc.on('click', '#btnStart',App.Player.onPlayerStartClick);
             App.$doc.on('click', '.btnAnswer',App.Player.onPlayerAnswerClick);
-            //App.$doc.on('click', '#btnPlayerRestart', App.Player.onPlayerRestart);
             App.$doc.on('click', '#btnComeBack', App.onBackClick);
-            //App.$doc.on('click', '#leaderboard', App.onLeaderboardClick);
         },
 
         /* *************************************
@@ -259,7 +238,6 @@ jQuery(function($){
              * Handler for the "Start" button on the Title Screen.
              */
             onCreateClick: function () {
-                // console.log('Clicked "Create A Game"');
                 IO.socket.emit('hostCreateNewGame');
             },
 
@@ -274,7 +252,6 @@ jQuery(function($){
                 App.Host.numPlayersInRoom = 0;
 
                 App.Host.displayNewGameScreen();
-                // console.log("Game started with ID: " + App.gameId + ' by host: ' + App.mySocketId);
             },
 
             /**
@@ -314,7 +291,6 @@ jQuery(function($){
 
                 // If two players have joined, start the game!
                 if (App.Host.numPlayersInRoom === 2) {
-                    // console.log('Room is full. Almost ready!');
 
                     // Let the server know that two players are present.
                     IO.socket.emit('hostRoomFull',App.gameId);
@@ -394,11 +370,7 @@ jQuery(function($){
 
                         // Notify the server to start the next round.
                         IO.socket.emit('hostNextRound',data);
-
-                    }/*  else {
-                        // A wrong answer was submitted, so decrement the player's score.
-                        $pScore.text( +$pScore.text() - 3 );
-                    } */
+                    }
                 }
             },
 
@@ -430,27 +402,12 @@ jQuery(function($){
                 }
                 App.doTextFit('#hostWord');
                 data.winner=winner;
-                /* if(data.done>0)
-                {
-
-                }
-                else data.done=0; */
-                //console.log(data);
-                //IO.socket.emit("clientEndGame",data);
                 // Reset game data
                 App.Host.numPlayersInRoom = 0;
                 App.Host.isNewGame = true;
                 IO.socket.emit('hostNextRound',data);
                 // Reset game data
-            },
-
-            /**
-             * A player hit the 'Start Again' button after the end of a game.
-             */
-           /*  restartGame : function() {
-                App.$gameArea.html(App.$templateNewGame);
-                $('#spanNewGameCode').text(App.gameId);
-            } */
+            }
         },
 
 
@@ -485,7 +442,6 @@ jQuery(function($){
              * and clicked Start.
              */
             onPlayerStartClick: function() {
-                // console.log('Player clicked "Start"');
 
                 // collect data to send to the server
                 var data = {
@@ -505,7 +461,6 @@ jQuery(function($){
              *  Click handler for the Player hitting a word in the word list.
              */
             onPlayerAnswerClick: function() {
-                // console.log('Clicked Answer Button');
                 var $btn = $(document.getElementById("input"));      // the tapped button
                 var answer = $btn.val().toLowerCase(); // The tapped word
 
@@ -519,20 +474,6 @@ jQuery(function($){
                 }
                 IO.socket.emit('playerAnswer',data);
             },
-
-            /**
-             *  Click handler for the "Start Again" button that appears
-             *  when a game is over.
-             */
-            /* onPlayerRestart : function() {
-                var data = {
-                    gameId : App.gameId,
-                    playerName : App.Player.myName
-                }
-                IO.socket.emit('playerRestart',data);
-                App.currentRound = 0;
-                $('#gameArea').html("<h3>Waiting on host to start new game.</h3>");
-            }, */
 
             /**
              * Display the waiting screen for player 1
@@ -563,7 +504,6 @@ jQuery(function($){
              * Show the list of words for the current round.
              * @param data{{round: *, word: *, answer: *, list: Array}}
              */
-            //MUDAR PARA UM INPUT
             newWord : function(data) {
                 // Create an unordered list element
                 var $list = $('<ul/>').attr('id','messages');
@@ -573,34 +513,7 @@ jQuery(function($){
                 // received from the server.
                 document.getElementById('messages').innerHTML = '<input id="input" autocomplete="off"></input>';
                 document.getElementById('messages').innerHTML += '<button class="btnAnswer">tentar</button>';
-                /* $input
-                    .append($('<li/>'))
-                    .append($('<input/>'))
-                        .addClass('value')
-                        .html('');
-
-                $list.appendcl
-                        
-                $list
-                    .append($('<li/>'))
-                    .append($('<button/>'))
-                        .addClass('btnAnswer')
-                        .addClass('btn')
-                        .html('button'); */
-
-                /*$.each(data, function(){
-                    $list                                //  <ul> </ul>
-                         //.append( $('<ul/>')              //  <ul> <li> </li> </ul>  
-                         .append( $('<input/>')      //  <ul> <li> <button> </button> </li> </ul>
-                                .addClass('input')   //  <ul> <li> <button class='btnAnswer'> </button> </li> </ul>
-                                //.addClass('btn')         //  <ul> <li> <button class='btnAnswer'> </button> </li> </ul>
-                               // .val(this)               //  <ul> <li> <button class='btnAnswer' value='word'> </button> </li> </ul>
-                                .html(this)              //  <ul> <li> <button class='btnAnswer' value='word'>word</button> </li> </ul>
-                            )
-                       // )
-                });*/
-
-
+                
                 // Insert the list onto the screen.
                 $('#gameArea').html($list);
 
@@ -610,15 +523,7 @@ jQuery(function($){
              * Show the "Game Over" screen.
              */
             endGame : function() {
-                $('#gameArea')
-                    .html('<div class="gameOver">Game Over!</div>')
-                    /* .append(
-                        // Create a button to start a new game.
-                        $('<button>Start Again</button>')
-                            .attr('id','btnComeBack')
-                            .addClass('btn')
-                            .addClass('btnGameOver')
-                    ) */;
+                $('#gameArea').html('<div class="gameOver">Game Over!</div>'); 
             }
         },
 
@@ -640,8 +545,6 @@ jQuery(function($){
             $el.text(startTime);
             App.doTextFit('#hostWord');
 
-            // console.log('Starting Countdown...');
-
             // Start a 1 second timer
             var timer = setInterval(countItDown,1000);
 
@@ -652,7 +555,6 @@ jQuery(function($){
                 App.doTextFit('#hostWord');
 
                 if( startTime <= 0 ){
-                    // console.log('Countdown Finished.');
 
                     // Stop the timer and do the callback.
                     clearInterval(timer);
