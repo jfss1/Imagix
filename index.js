@@ -9,28 +9,8 @@ var app = express();
 
 // Import the fs
 var fs = require('fs');
-// Import the Anagrammatix game file.
+// Import the game file.
 var agx = require('./agxgame');
-
-//creating server if not exists
-
-/* var file ="mydb.db";
-var exists = fs.existsSync(file);
-
-if(!exists) {
-  console.log("Creating DB file.");
-  fs.openSync(file, "w");
-}
-
-
-var sqlite3 = require("sqlite3").verbose();
-var db = new sqlite3.Database(file);
-
-db.serialize(function() {
-  if(!exists) {
-    db.run("CREATE TABLE player (player_name TEXT, player_win INT)");
-  }
-}); */
 
 // Create a simple Express application
 app.configure(function() {
