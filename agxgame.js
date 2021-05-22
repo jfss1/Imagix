@@ -242,8 +242,8 @@ function getWordData(i){
     // Package the words into a single object.
     var wordData = {
         round: i,
-        image : images[0],   // Displayed Word
-        answer : words[0], // Correct Answer
+        image : images,   // Displayed Word
+        answer : words, // Correct Answer
         list : words      // Word list for player (decoys and answer)
     };
 
@@ -286,83 +286,83 @@ function shuffle(array) {
  */
 var wordPool = [
     {
-        "images"  : [ "./img/balde.png" ],
-        "words" : [ "balde" ]
+        "images"  :  "./img/balde.png" ,
+        "words" :  "balde" 
     },
     {
-        "images"  : [ "./img/jarra.png" ],
-        "words" : ["jarra"]
+        "images"  :  "./img/jarra.png" ,
+        "words" : "jarra"
     },
     {
-        "images" : ["./img/camisa.png"] ,
-        "words" : [ "camisa"]
+        "images" : "./img/camisa.png" ,
+        "words" :  "camisa"
     },
     {
-        "images" : ["./img/faca.png"] ,
-        "words" : [ "faca"]
+        "images" : "./img/faca.png" ,
+        "words" :  "faca"
     },
     {
-        "images" : ["./img/martelo.png"] ,
-        "words" : [ "martelo"]
+        "images" : "./img/martelo.png" ,
+        "words" :  "martelo"
     },
     {
-        "images" : ["./img/garrafa.png"] ,
-        "words" : [ "garrafa"]
+        "images" : "./img/garrafa.png" ,
+        "words" :  "garrafa"
     },
     {
-        "images" : ["./img/chicote.png"] ,
-        "words" : [ "chicote"]
+        "images" : "./img/chicote.png" ,
+        "words" :  "chicote"
     },
     {
-        "images" : ["./img/frigorifico.png"] ,
-        "words" : [ "frigorífico"]
+        "images" : "./img/frigorifico.png" ,
+        "words" :  "frigorífico"
     },
     {
-        "images" : ["./img/telemovel.png"] ,
-        "words" : [ "telemóvel"]
+        "images" : "./img/telemovel.png" ,
+        "words" :  "telemóvel"
     },
     {
-        "images" : ["./img/camera.png"] ,
-        "words" : [ "câmera"]
+        "images" : "./img/camera.png" ,
+        "words" :  "câmera"
     },
     {
-        "images" : ["./img/macaco.png"] ,
-        "words" : [ "macaco"]
+        "images" : "./img/macaco.png" ,
+        "words" :  "macaco"
     },
     {
-        "images" : ["./img/girafa.png"] ,
-        "words" : [ "girafa"]
+        "images" : "./img/girafa.png" ,
+        "words" :  "girafa"
     },
     {
-        "images" : ["./img/elefante.png"] ,
-        "words" : [ "elefante"]
+        "images" : "./img/elefante.png" ,
+        "words" :  "elefante"
     },
     {
-        "images" : ["./img/ananas.png"] ,
-        "words" : [ "ananás"]
+        "images" : "./img/ananas.png" ,
+        "words" :  "ananás"
     },
     {
-        "images" : ["./img/maca1.png"] ,
-        "words" : [ "maçã"]
+        "images" : "./img/maca1.png" ,
+        "words" : "maçã"
     },
     {
-        "images" : ["./img/maca2.png"] ,
-        "words" : [ "maca"]
+        "images" : "./img/maca2.png" ,
+        "words" :  "maca"
     },
     {
-        "images" : ["./img/cadeira1.png"] ,
-        "words" : [ "cadeira de rodas"]
+        "images" : "./img/cadeira1.png" ,
+        "words" :  "cadeira de rodas"
     },
     {
-        "images" : ["./img/cadeira2.png"] ,
-        "words" : [ "cadeira"]
+        "images" : "./img/cadeira2.png" ,
+        "words" :  "cadeira"
     },
     {
-        "images" : ["./img/microondas.png"] ,
-        "words" : [ "microondas"]
+        "images" : "./img/microondas.png" ,
+        "words" :  "microondas"
     },
     {
-        "images" : ["./img/televisao.png"] ,
-        "words" : [ "televisão"]
+        "images" : "./img/televisao.png" ,
+        "words" :  "televisão"
     }
 ]
